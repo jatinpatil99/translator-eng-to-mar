@@ -1,5 +1,5 @@
 textblob
-Flask~==1.1.2
-pip~==21.1.1
-Jinja2~==2.10.1
-gunicorn==19.9.0
+Flask
+pip
+Jinja2
+gunicorn
