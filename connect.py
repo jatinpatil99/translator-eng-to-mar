@@ -4,11 +4,11 @@ import translate
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def home():
     return render_template('index.html')
 
-@app.route('/submit', methods=['POST'])
+@app.route('/submit', methods=['GET','POST'])
 def submit():
     if request.method == "POST":
         inp_string = request.form["inputtext"]
