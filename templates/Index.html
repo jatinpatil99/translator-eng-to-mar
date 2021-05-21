@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style>
+        body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+ /* background: linear-gradient(#141e30, #243b55);*/
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  height: 250px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.box .user-box {
+  position: relative;
+}
+
+.box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.box .user-box input:focus ~ label,
+.box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.box form btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.box btn:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+.box btn span {
+  position: absolute;
+  display: block;
+}
+.header{
+  width: 100%;
+  height: 80px;
+  display: block;
+  background-color: #101010;
+}
+.inner_header{
+  width: 1000px;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  
+}
+.logo_container{
+  display: table;
+  height: 100%;
+  float: center;
+}
+.logo_container h1{
+  color: white;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 50;
+}
+.logo_container h1 span{
+  font-weight: 800;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="inner_header">
+    <div class="logo_container">
+      <h1>ENGLISH<span> TO MARATHI</span></h1>
+    </div>
+  </div>
+</div>
+<div class="box">
+  <form action="{{ url_for('submit')}}" method="post">
+    <div class="user-box">
+      <input type="text" name="inputtext" required="">
+      <label>Input Text</label>
+    </div>
+    <button id="check" onclick="myFunction()" type="submit" class='btn' style="width:20%;height: 26px;color: white!important;background-color: #0074d9;margin-left: 40%;">SUBMIT</button>
+  </form>
+  <div class="user-box">
+      <label>{{output_text}}</label>
+  </div>
+</div>
+</body>
+</html>
